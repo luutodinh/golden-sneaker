@@ -1,0 +1,62 @@
+.card {
+  width: 320px;
+  height: 540px;
+  margin-top: 40px;
+  border-radius: 28px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding-left: 28px;
+  padding-right: 28px;
+  position: relative;
+  background-color: var(--white-color);
+  overflow: hidden;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    // height: 300px;
+    // width: 300px;
+    border-radius: 100%;
+    background-color: var(--primary);
+    top: -24%;
+    left: -56%;
+    z-index: -1;
+
+    animation: shrinkedBallon 1s ease-in-out forwards;
+  }
+}
+
+.brand-icon {
+  width: 50px;
+  margin: 12px 0;
+  display: block;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-title-text {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 16px 0;
+}
+
+.card-content {
+  height: calc(100% - 114px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@keyframes shrinkedBallon {
+  from {
+    width: 800px;
+    height: 800px;
+  }
+  to {
+    width: 300px;
+    height: 300px;
+  }
+}
